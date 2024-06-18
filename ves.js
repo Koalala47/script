@@ -1,8 +1,7 @@
-var body = $response.body;
-var obj = JSON.parse(body);
+var response = JSON.parse($response.body);
 
-obj.mbComboList.forEach(function(combo) {
-    combo.endTime = "2099-01-01";
+response.mbComboList.forEach(function(combo) {
+    combo.endTime = "2099-01-01 00:00:00";
 });
 
-$done({body: JSON.stringify(obj)});
+$done({body: JSON.stringify(response)});
